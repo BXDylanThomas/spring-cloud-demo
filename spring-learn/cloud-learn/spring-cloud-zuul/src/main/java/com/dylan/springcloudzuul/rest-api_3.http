@@ -1,0 +1,18 @@
+GET http://localhost:8865/api-a/hi?name=forezp
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+
+GET http://localhost:8865/api-b/hi?name=forezp
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8865/api-a/hi?name=forezp&token=22
+Accept: */*
+Cache-Control: no-cache
+
+###
