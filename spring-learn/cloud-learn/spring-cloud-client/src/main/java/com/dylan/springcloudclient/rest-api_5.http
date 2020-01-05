@@ -1,0 +1,11 @@
+
+# 刷新git中config改变后
+POST http://localhost:8861/actuator/refresh
+Accept: application/vnd.spring-boot.actuator.v3+json
+
+<> 2020-01-05T074024.200.json
+<> 2020-01-05T073841.200.json
+<> 2020-01-05T073822.405.json
+
+###
+
