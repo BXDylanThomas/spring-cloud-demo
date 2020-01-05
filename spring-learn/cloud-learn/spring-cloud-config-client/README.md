@@ -1,5 +1,5 @@
-获取config-server中的远程仓库的配置文件
-~~~~
+#获取config-server中的远程仓库的配置文件
+~~~~properties
 spring.application.name=config-client
 #指明远程仓库的分支
 spring.cloud.config.label=master
@@ -10,7 +10,7 @@ server.port=8881
 ~~~~
 
 
-~~~~
+~~~~properties
 spring.application.name=config-server
 server.port=8888
 
@@ -23,4 +23,26 @@ spring.cloud.config.label=master
 #私有仓库需要填写
 spring.cloud.config.server.git.username=
 spring.cloud.config.server.git.password=
+~~~~
+
+
+#配置高可用的配置中心
+
+> 注意此时需要在bootstrap.properties中配置 
+> bootstrap.properties 的优先级高于 application.properties
+
+config-server将信息注册到eureka中，client从其去获取
+~~~~properties
+spring.application.name=config-client
+spring.cloud.config.label=master
+spring.cloud.config.profile=dev
+#spring.cloud.config.uri= http://localhost:8888/
+
+eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/
+#配置中心读取文件
+spring.cloud.config.discovery.enabled=true
+#服务名
+spring.cloud.config.discovery.serviceId=config-server
+server.port=8881
+
 ~~~~
