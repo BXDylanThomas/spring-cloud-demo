@@ -1,4 +1,4 @@
-#获取config-server中的远程仓库的配置文件
+# 获取config-server中的远程仓库的配置文件
 ~~~~properties
 spring.application.name=config-client
 #指明远程仓库的分支
@@ -26,7 +26,7 @@ spring.cloud.config.server.git.password=
 ~~~~
 
 
-#配置高可用的配置中心
+# 配置高可用的配置中心
 
 > 注意此时需要在bootstrap.properties中配置 
 > bootstrap.properties 的优先级高于 application.properties
