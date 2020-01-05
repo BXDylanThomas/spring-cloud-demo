@@ -9,7 +9,9 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-
+  server:
+#    eureka默认开启自我保护模式，导致已经不存在的实例还是会显示再eureka上  此处设置关闭
+    enable-self-preservation: false
 spring:
   application:
     name: eurka-server
